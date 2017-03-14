@@ -1,0 +1,50 @@
+{
+  "name": "webpack-typescript-seed",
+  "version": "0.1.0",
+  "description": "A damn simple starter for Typescript and Webpack",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run server:dev",
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --port 3000 --host 0.0.0.0 --hot --inline --progress --profile --watch --content-base dist/ --open",
+    "server:prod": "cross-env NODE_ENV=production webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --port 3000 --host 0.0.0.0 --hot --inline --progress --profile --watch --content-base dist/",
+    "build": "npm run build:dev",
+    "build:dev": "webpack --config ./webpack.config.js --progress --profile --color --display-error-details --display-cached",
+    "build:prod": "cross-env NODE_ENV=production webpack --config ./webpack.config.js  --progress --profile --color --display-error-details --display-cached --bail",
+    "clean": "npm cache clear && rimraf -- dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emyann/typescript-webpack-starter.git"
+  },
+  "author": "yrenaudin",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.50",
+    "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^3.1.4",
+    "css-loader": "^0.26.1",
+    "ejs-loader": "^0.3.0",
+    "eslint": "^3.14.0",
+    "expose-loader": "^0.7.1",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.26.0",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^2.0.0",
+    "tslint": "^4.3.1",
+    "tslint-loader": "^3.3.0",
+    "typescript": "^2.1.5",
+    "webpack": "^2.1.0-beta.22",
+    "webpack-dashboard": "^0.2.1",
+    "webpack-dev-server": "2.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "bugs": {
+    "url": "https://github.com/emyann/typescript-webpack-starter/issues"
+  },
+  "homepage": "https://github.com/emyann/typescript-webpack-starter#readme"
+}
