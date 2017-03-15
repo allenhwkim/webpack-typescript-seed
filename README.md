@@ -4,7 +4,7 @@
 
 ```
 git clone https://github.com/allenhwkim/webpack-typescript-seed.git
-cd typescript-webpack-starter
+cd webpack-typescript-seed
 npm install
 npm start
 ```
