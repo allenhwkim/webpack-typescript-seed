@@ -1,11 +1,15 @@
-# Geocoder
+# Webpack + Typescript + Minimal code
 
 # Getting started
 
-## Install
-
-## Run
+```
+git clone https://github.com/allenhwkim/webpack-typescript-seed.git
+cd typescript-webpack-starter
+npm install
+npm start
+```
 
 ## Build Only
-
-## TODO
+```
+npm run build:prod
+```
