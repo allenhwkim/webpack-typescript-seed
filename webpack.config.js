@@ -15,7 +15,7 @@ var config = {
   },
   output: {
     path: path.resolve('./dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.[hash].js',
     sourceMapFilename: '[name].map',
     devtoolModuleFilenameTemplate: function (info) {
       return "file:///" + info.absoluteResourcePath;
@@ -38,15 +38,14 @@ var config = {
         NODE_ENV: JSON.stringify(nodeEnv)
       }
     }),
-    new HtmlWebpackPlugin({
-      title: 'Typescript Webpack Starter',
-      template: '!!ejs-loader!app/index.html'
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity,
-      filename: 'vendor.bundle.js'
+      filename: 'vendor.bundle.[hash].js'
     }),
+    new HtmlWebpackPlugin({filename: 'foo.html', template: '!ejs-loader!app/foo.html'}),
+    new HtmlWebpackPlugin({filename: 'bar.html', template: '!ejs-loader!app/bar.html'}),
+    new HtmlWebpackPlugin({filename: 'index.html', template: '!ejs-loader!app/index.html'}),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
